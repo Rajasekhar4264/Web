@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LoginForm</title>
+    <style>
+        body{
+            background-image:url(data:image/jpeg;base64,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);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color:white;
+        }
+        h1{
+            text-align: center;
+        }
+        legend{
+        border:3px solid black;
+        background-color: black;
+        color:white;
+        border-radius:0px 20px ;
+        box-shadow: 0px 0px 5px blue;
+     }
+        </style>
+</head>
+<body>
+    <form action="">
+        <h1>Online Job Application Form</h1>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <table width="100%">
+                <tr>
+                    <td><label for="">First Name</label></td>
+                    <td><input type="text"></td>
+                    <td><label for="">Middle Name</label></td>
+                    <td><input type="text"></td>
+                    <td><label for="">Last Name</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Fathers Name</label></td>
+                    <td><input type="text"></td>
+                    <td><label for="">Mothers Name</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Current Address</label></td>
+                    <td><textarea></textarea></td>
+                    <td><label for="">Permanent Address</label></td>
+                    <td><textarea name="" id=""></textarea></td>
+                </tr>
+                <tr><td><label for=""><b>Phone Numbers</b></label></td></tr>
+                <tr>
+                    <td><label for="">Landline Number</label></td>
+                    <td><input type="tel"></td>
+                    <td><label for="">Mobile Number</label></td>
+                    <td><input type="tel"></td>
+                </tr>
+                <tr></tr>
+                    <td><label for="">Date Of Birth</label></td>
+                    <td><input type="date"></td>
+                    <td><label for="">Place Of Birth</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Select Gender</label></td>
+                    <td></td>
+                    <td><input type="Radio" name="Radio1">Male</td>
+                    <td><input type="Radio" name="Radio1">Female</td>
+                </tr>
+                <tr></tr>
+                <td><label for="">Highest Qualification</label></td>
+                <td><input type="text"></td>
+                <td><label for="">Year Of Passing</label></td>
+                <td><input type="date"></td>
+            </tr>
+                <tr>
+                    <td><label for="">Languages</label></td>
+                    <td></td>
+                    <td><input type="checkbox">Telugu</td>
+                    <td><input type="checkbox">Hindi</td>
+                    <td><input type="checkbox">English</td>
+                </tr>
+                <tr>
+                    <td><label for="">Hobbies</label></td>
+                    <td></td>
+                    <td><input type="checkbox">Eating</td>
+                    <td><input type="checkbox">Coding</td>
+                    <td><input type="checkbox">Sleeping</td>
+                </tr>
+                <tr>
+                    <td><label for="">About Yourself</label></td>
+                    <td><textarea name="" id=""></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="">Nationality</label></td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">Indian</option>
+                            <option value="">NRI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Aadhar Number</label></td>
+                    <td><input type="text"></td>
+                    <td><label for="">PANCARD Number</label></td>
+                    <td><input type="text"></td>
+                </tr>
+        </table>
+        </fieldset>
+        <h1>                    </h1>
+        <fieldset>
+            <legend>Education Details</legend>
+            <table width="100%">
+                <tr>
+                    <td><label for="">S.NO</label></td>
+                    <td><label for="">Qualification</label></td>
+                    <td><label for="">Institute/University</label></td>
+                    <td><label for="">Year Of Passing</label></td>
+                    <td><label for="">Marks(%)</label></td>
+                </tr>
+                <tr>
+                    <td><label for="">1</label></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">2</label></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">3</label></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <h1>                               </h1>
+        <fieldset>
+            <legend>Work Experience</legend>
+            <table width="100%">
+                <tr>
+                    <td><label for="">S.NO</label></td>
+                    <td><label for="">Company</label></td>
+                    <td><label for="">Work/Roles</label></td>
+                    <td><label for="">From Date</label></td>
+                    <td><label for="">To Date</label></td>
+                </tr>
+                <tr>
+                    <td><label for="">1</label></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">2</label></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">3</label></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><textarea name="" id=""></textarea></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <h1>                            </h1>
+        <fieldset>
+            <legend>Other Details</legend>
+            <table width="100%">
+                <tr>
+                    <td><label for="">Job Type</label></td>
+                    <td></td>
+                    <td><input type="Radio" name="Radio2">Permanent</td>
+
+                    <td><input type="Radio" name="Radio2">Contract</td>
+
+                    <td><input type="Radio" name="Radio2">Others</td>
+                <tr>
+                    <td><label for="">Date Of Joining</label></td>
+                    <td></td>
+                    <td><input type="date"></td>
+
+                    <td><label for="">Time Of Joining</label></td>
+
+                    <td><input type="time"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Preffered Job Location</label></td>
+                    <td></td>
+                    <td><input type="Radio" name="Radio3">Hyderabad</td>
+                  
+                    <td><input type="Radio" name="Radio3">Bangalore</td>
+                    
+                    <td><input type="Radio" >Others</td>
+                </tr>
+                <tr>
+                    <td><label for="">Willing to Relocate to Hyderabad?</label></td>
+                    <td></td>
+                    <td></td>
+                  
+                    <td><input type="Radio" name="Radio4" >Yes</td>
+                    
+                    <td><input type="Radio" name="Radio4">No</td>
+                </tr>
+                <tr>
+                <td><input type="checkbox">I am here Declaring that<br> all the above mentioned <br>information is true as <br> per my knowledge</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                   <td><input type="submit" name="Submit"></td>
+                   <td><input type="reset" name="Reset"></td>                
+                </tr>
+                <tr>
+                    <td><a href="./LoginForm1.html" target="_blank">next</a></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

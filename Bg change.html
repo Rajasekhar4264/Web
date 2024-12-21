@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #count{
+            color: white;
+        }
+        .container{
+            background-color: green;
+            margin: 200px auto;
+            width: 30px;
+            padding: 50px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="inc">+</button>
+        <h1 id="count1"></h1>
+        <h1 id="count"></h1>
+        <button id="dec">-</button>
+    </div>
+    <script>
+        let incBtn=document.getElementById("inc")
+        let decBtn=document.getElementById("dec")
+        let countTag=document.querySelector("#count")
+        let count=0;
+        let styles=document.querySelector(".container")
+        countTag.innerHTML=count
+        function increment(){
+            count++
+            countTag.innerHTML=count
+            if (count<0){
+                styles.style.backgroundColor="black"
+            }
+            else if (count==0){
+                styles.style.backgroundColor="white"
+            }
+            else if (count>=0 && count<=5){
+                styles.style.backgroundColor='blue'
+            }
+            else if (count==6){
+                styles.style.backgroundColor='yellow'
+            }
+            else if (count>6 && count<10){
+                styles.style.backgroundColor='brown'
+            }
+            else if (count>10){
+                styles.style.backgroundColor='red'
+            }
+        }
+        incBtn.onclick=increment
+        function decrement(){
+            count--
+            countTag.innerHTML=count
+            if (count<0){
+                styles.style.backgroundColor="black"
+            }
+            else if (count==0){
+                styles.style.backgroundColor="white"
+            }
+            else if (count>=0 && count<=5){
+                styles.style.backgroundColor='blue'
+            }
+            else if (count==6){
+                styles.style.backgroundColor='yellow'
+            }
+            else if (count>6 && count<10){
+                styles.style.backgroundColor='brown'
+            }
+            else if (count>10){
+                styles.style.backgroundColor='red'
+            }
+        }
+        decBtn.onclick=decrement
+    </script>
+</body>
+</html>

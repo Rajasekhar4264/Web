@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .container{
+            height: 400px;
+            width: 300px;
+            border: 5px solid black;
+            border-radius: 20px;
+            margin: 200px auto;
+            box-shadow: 0px 0px 50px black;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            height: inherit;
+            width: inherit;
+            border-radius: inherit;
+            transition: all 2s linear 0s;
+        }
+        .slide{
+            height: inherit;
+            width: inherit;
+            border-radius: inherit;
+            background-color: green;
+            position: absolute;
+            top: 0px;
+            transition: all 5s ease 0s;
+        }
+        .container:hover>img{
+            transform: scale(1.5);
+        }
+        .container:hover>.slide{
+            transform: translateY(-1300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/kz3118w0/poster/p/g/n/large-british-terminal-god-tirupati-balaji-lord-venkateswara-original-imagb6bcwahuapxp.jpeg?q=90&crop=false" alt="">
+        <div class="slide"></div>
+    </div>
+</body>
+</html>

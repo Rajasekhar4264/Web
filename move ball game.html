@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Ball Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #game-area {
+            width: 300px;
+            height: 300px;
+            background-color: #e0e0e0;
+            border: 2px solid #333;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #ball {
+            width: 30px;
+            height: 30px;
+            background-color: #ff5733;
+            border-radius: 50%;
+            position: absolute;
+            top: 135px; /* Centered */
+            left: 135px; /* Centered */
+        }
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            margin-left: 57px;
+        }
+        .control-btn:active {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-area">
+        <div id="ball"></div>
+    </div>
+
+    <div id="controls">
+        <button class="control-btn" onclick="moveBall('up')">↑</button>
+        <div>
+            <button class="control-btn" onclick="moveBall('left')">←</button>
+            <button class="control-btn" onclick="moveBall('right')">→</button>
+        </div>
+        <button class="control-btn" onclick="moveBall('down')">↓</button>
+    </div>
+
+    <script>
+        const ball = document.getElementById("ball");
+        const gameArea = document.getElementById("game-area");
+        const step = 10; // Movement step in pixels
+
+        function moveBall(direction) {
+            // Get current position of the ball
+            const ballRect = ball.getBoundingClientRect();
+            const areaRect = gameArea.getBoundingClientRect();
+
+            // Move based on direction
+            if (direction === 'up' && ballRect.top > areaRect.top) {
+                ball.style.top = ball.offsetTop - step + "px";
+            } else if (direction === 'down' && ballRect.bottom < areaRect.bottom) {
+                ball.style.top = ball.offsetTop + step + "px";
+            } else if (direction === 'left' && ballRect.left > areaRect.left) {
+                ball.style.left = ball.offsetLeft - step + "px";
+            } else if (direction === 'right' && ballRect.right < areaRect.right) {
+                ball.style.left = ball.offsetLeft + step + "px";
+            }
+        }
+    </script>
+
+</body>
+</html>

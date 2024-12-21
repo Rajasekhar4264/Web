@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Blocks Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(15, 70px);
+            grid-template-rows: repeat(4, 70px);
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .block {
+            width: 70px;
+            height: 70px;
+            background-color: #ddd;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid" id="grid"></div>
+    <div class="controls">
+        <button id="playBtn">Play</button>
+        <button id="stopBtn">Stop</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+
+
+    <script>
+        let interval;
+        let currentIndex = 0;
+        const blocks = [];
+        const totalBlocks = 60;
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FF8833','#66FF99'];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('grid');
+
+            document.getElementById('playBtn').addEventListener('click', play);
+            document.getElementById('stopBtn').addEventListener('click', stop);
+            document.getElementById('resetBtn').addEventListener('click', reset);
+            
+            // Create 25 blocks and add to grid
+            for (let i = 0; i < totalBlocks; i++) {
+                const block = document.createElement('div');
+                block.classList.add('block');
+                grid.appendChild(block);
+                blocks.push(block);
+            }
+
+        });
+
+        function play() {
+            if (interval) return;  // Prevent multiple intervals
+
+            interval = setInterval(() => {
+                if (currentIndex >= totalBlocks) {
+                    clearInterval(interval);
+                    interval = null;
+                    return;
+                }
+                
+                blocks[currentIndex].style.backgroundColor = colors[currentIndex % colors.length];
+                currentIndex++;
+            }, 500); // Change color every 300ms
+        }
+
+        function stop() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function reset() {
+            stop();
+            currentIndex = 0;
+            blocks.forEach(block => block.style.backgroundColor = '#ddd');
+        }
+    </script>
+</body>
+</html>

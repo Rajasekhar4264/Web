@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animations</title>
+    <style>
+        .container{
+            display: flex;
+            height: 600px;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        .child{
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background-color: blue;
+            animation: bouncing 1s linear 0s infinite alternate;
+        }
+        .one{
+            background-color: blue;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+        }
+        .two{
+            background-color: red;
+            animation-duration: 0.8s;
+            animation-delay: 0.8s;
+        }
+        .three{
+            background-color: green;
+            animation-duration: 1s;
+            animation-delay: 1s;
+        }
+        .four{
+            background-color: yellow;
+            animation-duration: 0.7s;
+            animation-delay: 0.7s;
+        }
+        .five{
+            background-color: violet;
+            animation-duration: 0.9s;
+            animation-delay: 0.9s;
+        }
+        .six{
+            background-color: orange;
+            animation-duration: 0.4s;
+            animation-delay: 0.4s;
+        }
+        .seven{
+            background-color: white;
+            animation-duration: 1.2s;
+            animation-delay: 1.2s;
+        }
+        body{
+            background-color: black;
+        }
+        @keyframes bouncing {
+            0%{
+                transform: translateY(-100px);
+            }
+            100%{
+                transform: translateY(100px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child one"></div>
+        <div class="child two"></div>
+        <div class="child three"></div>
+        <div class="child four"></div>
+        <div class="child five"></div>
+        <div class="child six"></div>
+        <div class="child seven"></div>
+    </div>
+</body>
+</html>

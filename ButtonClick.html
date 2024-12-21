@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item1{
+            height: 300px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+        }
+        .item2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 200px;
+            background-color: red;
+        }
+        #child{
+            padding: 10px 20px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1">
+        <div class="item2">
+            <button id="child">CLICK HERE</button>
+        </div>
+    </div>
+    <script>
+        let item1=document.querySelector(".item1")
+        let item2=document.querySelector(".item2")
+        let btn=document.getElementById("child")
+
+       //bubbling phase===============================
+        item1.addEventListener("click",()=>{
+            console.log("item 1 is clicked");
+        })
+        item2.addEventListener("click",()=>{
+            console.log("item 2 is clicked");
+        })
+        btn.addEventListener("click",()=>{
+            console.log("btn is clicked");
+        })
+
+        // //capturing phase=================================
+        // item1.addEventListener("click",()=>{
+        //     console.log("item 1 is clicked");
+        // },{capture:true})
+        // item2.addEventListener("click",()=>{
+        //     console.log("item 2 is clicked");
+        // },{capture:true})
+        // btn.addEventListener("click",()=>{
+        //     console.log("btn is clicked");
+        // },{capture:true})
+
+        ///stop event propagation=========================
+        // item1.addEventListener("click",()=>{
+        //     console.log("item 1 is clicked");
+        // })
+        // item2.addEventListener("click",()=>{
+        //     event.stopPropagation()
+        //     console.log("item 2 is clicked");
+        // })
+        // btn.addEventListener("click",()=>{
+        //     event.stopPropagation()
+        //     console.log("btn is clicked");
+        // })
+    </script>
+</body>
+</html>
